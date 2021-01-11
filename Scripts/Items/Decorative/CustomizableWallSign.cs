@@ -17,6 +17,7 @@ namespace Server.Items
         {
             Lines = new string[3];
             LootType = LootType.Blessed;
+            Name = "znak";
         }
 
         public override void OnDoubleClick(Mobile from)

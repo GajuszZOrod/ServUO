@@ -23,6 +23,7 @@ namespace Server.Items
         {
             Lines = new string[3];
             LootType = LootType.Blessed;
+            Name = "wycieraczka";
         }
 
         public bool Dye(Mobile from, DyeTub sender)
