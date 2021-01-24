@@ -10,6 +10,8 @@ namespace Server.Mobiles
         private readonly Dictionary<Type, int> m_Table = new Dictionary<Type, int>();
         private Type[] m_Types;
 
+        public Dictionary<Type, int> Table => m_Table; //!NELDERIM!
+
         public Type[] Types
         {
             get

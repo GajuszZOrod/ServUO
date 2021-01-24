@@ -14,7 +14,7 @@ namespace Server.Items
     }
 
     [Alterable(typeof(DefTailoring), typeof(GargishLeatherWingArmor), true)]
-    public class BaseQuiver : Container, ICraftable, ISetItem, IVvVItem, IOwnerRestricted, IRangeDamage, IArtifact, ICanBeElfOrHuman
+    public partial class BaseQuiver : Container, ICraftable, ISetItem, IVvVItem, IOwnerRestricted, IRangeDamage, IArtifact, ICanBeElfOrHuman
     {
         private bool _VvVItem;
         private Mobile _Owner;
@@ -941,7 +941,12 @@ namespace Server.Items
                     }
             }
 
-            int strBonus = ComputeStatBonus(StatType.Str);
+			if ( m_AosSkillBonuses == null )
+				m_AosSkillBonuses = new AosSkillBonuses(this);
+			if ( m_Resistances == null )
+				m_Resistances = new AosElementAttributes(this);
+
+			int strBonus = ComputeStatBonus(StatType.Str);
             int dexBonus = ComputeStatBonus(StatType.Dex);
             int intBonus = ComputeStatBonus(StatType.Int);
 

@@ -26,7 +26,7 @@ namespace Server.Mobiles
         ThighBoots
     }
 
-    public abstract class BaseVendor : BaseCreature, IVendor
+    public abstract partial class BaseVendor : BaseCreature, IVendor
     {
         public static bool UseVendorEconomy = !Siege.SiegeShard;
         public static int BuyItemChange = Config.Get("Vendors.BuyItemChange", 1000);
@@ -2303,7 +2303,7 @@ namespace Server.Mobiles
                         {
                             int doubled = reader.ReadEncodedInt();
 
-                            if (version < 4)
+                            if (version == 3)
                             {
                                 reader.ReadEncodedInt();
                                 reader.ReadEncodedInt();

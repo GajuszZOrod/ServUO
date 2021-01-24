@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Server
 {
 	[Parsable]
-	public abstract class Race
+	public abstract partial class Race
 	{
 		public static Race DefaultRace => m_Races[0];
 
