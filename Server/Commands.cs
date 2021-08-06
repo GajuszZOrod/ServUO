@@ -249,7 +249,7 @@ namespace Server.Commands
 
 				if (entry != null)
 				{
-					if (from == null || from.AccessLevel >= entry.AccessLevel)
+					if (from == null || from.TrueAccessLevel >= entry.AccessLevel)
 					{
 						if (entry.Handler != null)
 						{

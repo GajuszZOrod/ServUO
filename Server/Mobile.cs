@@ -8665,7 +8665,7 @@ namespace Server
 				}
 			}
 
-			return !item.Deleted && item.Map == m_Map && (item.Visible || IsStaff());
+			return !item.Deleted && item.Map == m_Map && (item.Visible || TrueAccessLevel > AccessLevel.Counselor);
 		}
 
 		public virtual bool CanSee(Mobile m)
@@ -8676,8 +8676,8 @@ namespace Server
 			}
 
 			return this == m ||
-				   (m.m_Map == m_Map && (!m.Hidden || (IsStaff() && m_AccessLevel >= m.AccessLevel)) &&
-					(m.Alive || (Skills.SpiritSpeak.Value >= 100.0) || !Alive || IsStaff() || m.Warmode));
+				   (m.m_Map == m_Map && (!m.Hidden || (TrueAccessLevel > AccessLevel.Counselor && m_AccessLevel >= m.AccessLevel)) &&
+					(m.Alive || (Skills.SpiritSpeak.Value >= 100.0) || !Alive || TrueAccessLevel > AccessLevel.Counselor || m.Warmode));
 		}
 
 		public virtual bool CanBeRenamedBy(Mobile from)
