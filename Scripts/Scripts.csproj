@@ -26,5 +26,6 @@
 
   <ItemGroup>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
 </Project>

@@ -1809,7 +1809,9 @@ namespace Server.Mobiles
                             {
                                 if (ssi.IsResellable(item))
                                 {
+	                                
                                     Item buyItem;
+                                    
 
                                     if (amount >= item.Amount)
                                     {
