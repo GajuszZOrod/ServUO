@@ -328,7 +328,7 @@ namespace Server
 
 			m_Map.RegisterRegion(this);
 
-			var sectors = new List<Sector>();
+			var sectors = new LinkedHashSet<Sector>();
 
 			for (var i = 0; i < m_Area.Length; i++)
 			{
@@ -356,7 +356,8 @@ namespace Server
 				}
 			}
 
-			m_Sectors = sectors.ToArray();
+			m_Sectors = new Sector[sectors.Count];
+			sectors.CopyTo( m_Sectors );
 		}
 
 		public void Unregister()
